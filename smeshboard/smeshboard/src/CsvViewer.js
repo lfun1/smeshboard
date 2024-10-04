@@ -1,21 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse'; // Library to parse CSV
 
-const fetchCsvData = async () => {
-    try {
-      const response = await fetch("http://localhost:5000/get-data");
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.text(); // Use .text() if it's a CSV file
-      console.log(data); // Check the CSV data
-    } catch (error) {
-      console.error("Fetch error:", error);
-    }
-  };
-  
-  // Call the function to fetch data
-  fetchCsvData();
+// Use React component libraries, no need to make own table.
 
 const CsvViewer = () => {
   const [csvData, setCsvData] = useState([]);

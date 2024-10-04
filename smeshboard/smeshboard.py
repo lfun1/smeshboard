@@ -3,7 +3,7 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app) # enable CORS for React to access Flask via HTTP
+CORS(app) # enable CORS for Flask to respond to React app's requests on different port
 
 @app.route('/')
 def home():
@@ -15,4 +15,4 @@ def send_data():
     return send_file(data_path, mimetype='text/csv')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
